@@ -1,0 +1,304 @@
+id: HJsdsd45HHATSYJHIKUAHZATFGS54554sdsdfc9
+createdBy: o3ff8o6DhNXC
+dateCreated: 1750328000
+name: Calliope Mini Lab
+meta:
+  logo: >-
+    https://raw.githubusercontent.com/edrys-labs/lab-calliope-mini/main/media/calliope.jpg
+  description: >-
+    Die Studierenden entwickeln eine Anwendung für den Calliope mini,
+    bei der Umweltdaten über integrierte Sensoren ausgelesen und auf der LED-Matrix visualisiert werden.
+    Ziel ist es, eine dynamische Wetteranzeige zu programmieren, die Temperaturänderungen erkennt und bei starken Schwankungen akustisch signalisiert.
+  selfAssign: true
+  defaultNumberOfRooms: '1'
+members:
+  teacher: []
+  student: []
+modules:
+  - url: https://edrys-labs.github.io/module-markdown-it/index.html
+    config:
+      content: >-
+        # Calliope Mini Lab – Einführung in MicroPython & Sensorik
+
+        Liebe Teilnehmerinnen und Teilnehmer,
+
+
+        dieses Laborpraktikum bietet Ihnen die Möglichkeit,
+        den Einstieg in die Programmierung eingebetteter Systeme mit MicroPython zu erlernen –
+        direkt am Beispiel des Calliope mini.
+
+
+        Im Mittelpunkt steht nicht die Lösung eines vorgegebenen Problems,
+        sondern die freie Auseinandersetzung mit den vielfältigen Sensoren und Aktoren des Calliope mini:
+        Sie können Umweltdaten erfassen, die LED-Matrix ansteuern und eigene kleine Anwendungen zur Umweltüberwachung entwickeln.
+
+
+        Sie können Ihre Programme direkt aus dem Editor heraus auf das reale Gerät hochladen und testen.
+        Bitte beachten Sie, ob bereits jemand an der Station arbeitet, bevor Sie Ihren Code hochladen.
+        Der letzte Programmzustand bleibt erhalten, also verlassen Sie die Station bitte in einem nachvollziehbaren Zustand.
+
+
+        In **Raum 1** erhalten Sie grundlegende Informationen zum Calliope mini und zu den Lernzielen dieses Labors.
+        Die praktische Umsetzung erfolgt in der **Station**, wo Sie den Calliope mini programmieren können.
+
+
+        Die Aufgabe ist bewusst offen gehalten – Sie sollen eigene Ideen ausprobieren,
+        mit der Hardware experimentieren und ein Gefühl für die Programmierung eingebetteter Systeme entwickeln.
+        Bei Fragen oder technischen Problemen stehen Ihnen unsere Betreuer selbstverständlich zur Seite.
+
+
+        > Ihre Codeänderungen werden auf der Station **anonymisiert** gespeichert. 
+        Wir wollen damit tatsächliche Problemfelder identifizieren, um damit die
+        Veranstaltung systematisch weiterzuentwickeln. Aus den Daten
+        können keine Rückschlüsse auf den Teilnehmenden oder spezifika des
+        Rechners gezogen werden. Wenn Sie Fragen dazu haben, sprechen Sie uns gern an.
+
+
+        Wir freuen uns auf Ihr Feedback und Ihre Anregungen.
+
+
+        _Ihr CrossLab Team_
+    studentConfig:
+      content: ''
+    teacherConfig:
+      content: ''
+    stationConfig:
+      content: ''
+    showInCustom: lobby
+    width: full
+    height: huge
+  - url: https://edrys-labs.github.io/module-markdown-it/index.html
+    config: 
+      content: >-
+        # Tutorial für Studierende
+
+
+        Ein kurzes Einführungsvideo zu Edrys und der Nutzung der Remote-Labore
+
+
+        <video controls src="https://github.com/edrys-labs/lab-calliope-mini/raw/refs/heads/main/media/demo.webm" width="100%">
+        Sorry, your browser doesn't support embedded videos, but don’t worry, you can
+        <a href="https://github.com/edrys-labs/lab-calliope-mini/raw/refs/heads/main/media/demo.webm">download it</a>
+        and watch it with your favorite video player!
+        </video>
+          
+    studentConfig: 
+      content: ''
+    teacherConfig: 
+      content: ''
+    stationConfig: 
+      content: ''
+    showInCustom: lobby
+    width: full
+    height: 600
+  - url: https://edrys-labs.github.io/module-markdown-it/index.html
+    config:
+      content: >-
+        # Aufgabeninhalt
+
+
+        ## Lernziele
+
+        * Erste Schritte mit der Programmierung von eingebetteten Systemen in MicroPython
+
+        * Kennenlernen der Hardware-Funktionen des Calliope mini (Sensoren, LEDs, Taster)
+
+        * Eigenständiges Experimentieren mit Umweltsensoren und der LED-Matrix
+
+        * Entwicklung strukturierter, wiederverwendbarer Programme in MicroPython
+
+        * Nutzung der seriellen Schnittstelle zur Kommunikation und Fehleranalyse
+
+
+        ## Aufgabenstellung
+
+
+        Diese Aufgabe ist offen gestaltet, das heißt: Es gibt keine feste Vorgabe, sondern Sie haben die Möglichkeit,
+        eigenständig eine kleine Anwendung mit dem Calliope mini zu entwickeln. Mögliche Beispiele:
+
+        * Schreiben Sie ein Programm, das kontinuierlich Umweltdaten (Licht, Temperatur) misst und auf der LED-Matrix anzeigt.
+
+        * Entwickeln Sie eine einfache Alarmfunktion, die auf Basis der Helligkeit die LED-Matrix steuert.
+
+        * Entwickeln Sie eine Musikbox, die basierend auf Lichtintensität verschiedene Melodien abspielt.
+
+        * Übertragen Sie Messwerte kontinuierlich über die serielle Schnittstelle.
+
+
+        Sie können jederzeit eigene Ideen umsetzen und die vielfältigen Funktionen des Calliope mini nutzen.
+        Nutzen Sie diese Gelegenheit, um verschiedene Sensoren und Aktoren auszuprobieren – und dabei MicroPython praxisnah zu erlernen.
+
+
+        ## Technische Basis
+
+        Die Umsetzung erfolgt auf dem Calliope mini.
+
+
+        | Bautteil                                   | Funktion                   |
+
+        | ------------------------------------------ | -------------------------- |
+
+        | Nordic nRF52820                            | Interface-Prozessor        |
+
+        | Nordic nRF52833                            | Anwendungs-Prozessor       |
+
+        | Lichtsensor                                | Umweltdaten erfassen       |
+
+        | Temperatursensor                           | Umweltdaten erfassen       |
+
+        | LED-Matrix (5x5)                           | Ausgabe von Informationen  |
+
+        | RGB-LEDs (3x)                              | Ausgabe von Informationen  |
+
+        | Taster (2x)                                | Benutzerinteraktion        |
+
+        | Bluetooth-Modul                            | Kommunikation              |
+
+
+        Für zusätzliche Informationen und technische Details zum Calliope mini:
+
+        * [Calliope mini Übersicht](https://calliope.cc/calliope-mini/uebersicht)
+
+        * [Calliope mini MicroPython API](https://calliope.cc/programmieren/editoren/python/python-api)
+    studentConfig:
+      content: ''
+    teacherConfig:
+      content: ''
+    stationConfig:
+      content: ''
+    showInCustom: Room 1
+    width: full
+    height: tall
+  - url: https://edrys-labs.github.io/module-markdown-it/index.html
+    config:
+      content: >-
+        # Calliope Mini V3 Layout
+
+
+        ![Calliope](https://calliope.cc/media/pages/calliope-mini/technische-daten/6b2510621e-1695728195/calliopev3_front.svg)
+    studentConfig:
+      content: ''
+    teacherConfig:
+      content: ''
+    stationConfig:
+      content: ''
+    showInCustom: Room 1
+    width: 700
+    height: 700
+  - url: https://edrys-labs.github.io/module-editor/index.html
+    config:
+      editorText: |-
+        # Type your code here
+      runCommand: execute
+      language: python
+      theme: light
+    showInCustom: station
+    width: full
+    height: medium
+  - url: https://edrys-labs.github.io/module-station-stream/index.html
+    stationConfig:
+      video: true
+      audio: false
+    showInCustom: station
+    width: half
+    height: medium
+  - url: https://edrys-labs.github.io/module-pyxtermjs/index.html
+    config: ''
+    studentConfig:
+      content: ''
+    teacherConfig:
+      content: ''
+    stationConfig:
+      server: http://localhost:5000/pty
+      execute: execute
+      script: >
+        echo $CODE | base64 --decode > main.py
+
+        mpremote connect auto fs rm :main.py
+
+        mpremote connect auto fs cp main.py :main.py 
+
+        mpremote connect auto exec "import main"
+      enable:
+        teacher: true
+        student: true
+    showInCustom: station
+    width: half
+    height: medium
+  - url: https://edrys-labs.github.io/module-markdown-it/index.html
+    config:
+      content: >-
+        # Calliope Mini Einstieg mit MicroPython
+
+
+        > Diese Station zielt darauf ab, Ihre Fähigkeiten im Umgang mit eingebetteten Systemen zu fördern.
+        Sie programmieren den Calliope mini mit MicroPython, um grundlegende Funktionen wie Umweltsensorabfrage
+        und Ausgabe über die LED-Matrix zu realisieren.
+
+        Der Calliope mini basiert auf einem Nordic nRF51822 Mikrocontroller.
+        Die Sensoren und Aktoren sind direkt über die MicroPython API ansprechbar.
+
+        Ziel ist es, sich mit der Plattform vertraut zu machen,
+        Sensorwerte auszulesen, diese auf der LED-Matrix anzuzeigen und einfache Logik zu implementieren.
+
+
+        ## Beispielcode für Umweltdatenanzeige mit MicroPython
+
+
+        ```python
+
+        from calliopemini import *
+
+        import music
+
+
+        prev_temp = temperature()
+
+
+        while True:
+            temp = temperature()
+            print('Temperature:', temp, 'deg')
+
+            if temp > 25:
+                display.show(Image.HAPPY)
+            elif temp < 15:
+                display.show(Image.SAD)
+            else:
+                display.show(Image.ASLEEP)
+
+            if abs(temp - prev_temp) > 2:
+                music.play(['c4:4'])
+            
+            prev_temp = temp
+            sleep(2000)
+
+        ```
+    studentConfig:
+      content: ''
+    teacherConfig:
+      content: ''
+    stationConfig:
+      content: ''
+    showInCustom: station
+    width: half
+    height: tall
+  - url: https://edrys-labs.github.io/module-code-logger/
+    config:
+      content: ''
+    studentConfig:
+      content: ''
+    teacherConfig:
+      content: ''
+    stationConfig:
+      content: ''
+    showInCustom: station, station-only
+    width: full
+    height: tall
+  - url: https://edrys-labs.github.io/module-station-light-control/index.html
+    config: ''
+    studentConfig: ''
+    teacherConfig: ''
+    stationConfig: ''
+    showInCustom: station
+    width: third
+    height: short
