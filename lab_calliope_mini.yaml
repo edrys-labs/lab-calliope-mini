@@ -204,10 +204,8 @@ modules:
     height: medium
   - url: https://edrys-labs.github.io/module-pyxtermjs/index.html
     config: ''
-    studentConfig:
-      content: ''
-    teacherConfig:
-      content: ''
+    studentConfig: ''
+    teacherConfig: ''
     stationConfig:
       server: http://localhost:5000/pty
       execute: execute
@@ -283,14 +281,10 @@ modules:
     width: half
     height: tall
   - url: https://edrys-labs.github.io/module-code-logger/
-    config:
-      content: ''
-    studentConfig:
-      content: ''
-    teacherConfig:
-      content: ''
-    stationConfig:
-      content: ''
+    config: ''
+    studentConfig: ''
+    teacherConfig: ''
+    stationConfig: ''
     showInCustom: station, station-only
     width: full
     height: tall
