@@ -188,7 +188,12 @@ modules:
   - url: https://edrys-labs.github.io/module-editor/index.html
     config:
       editorText: |-
-        # Type your code here
+        from calliopemini import *
+
+        while True:
+            display.show(Image.HEART)
+            sleep(1000)
+            display.scroll('Hello')
       runCommand: execute
       language: python
       theme: light
