@@ -255,7 +255,6 @@ modules:
       server: http://localhost:5000/pty
       execute: execute
       workflow: micropython
-      port: /dev/ttyACM1
       enable:
         teacher: true
         student: true
