@@ -1,6 +1,4 @@
 id: j83SVIVcOd5ARUtd
-createdBy: >-
-  BMc+QIQD5VAVHP2v/0DyhCE/LnGr/liNheFhay/HvQ3d29v0z59C9kD+AXZzWagCGFKSWrh1A4jprKj4qJlrU0M=
 dateCreated: 1750328000
 name: Calliope Mini Lab
 meta:
@@ -349,7 +347,3 @@ modules:
     id: 343fd3d2-4ee2-4767-9a99-86093333671f
 communicationConfig: null
 keepUrlConfig: true
-setupSigner: >-
-  BMc+QIQD5VAVHP2v/0DyhCE/LnGr/liNheFhay/HvQ3d29v0z59C9kD+AXZzWagCGFKSWrh1A4jprKj4qJlrU0M=
-setupSignature: >-
-  J+wzVo1wemd34N44yjbLPz53xZ/MNgyrIImUk4FJuNFGNC1yU4mF+8FYoiQ4P8ump5SqwluNdP8si3R999lAgg==
