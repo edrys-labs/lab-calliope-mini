@@ -10,8 +10,8 @@ meta:
     Die Studierenden entwickeln eine Anwendung für den Calliope mini, bei der
     Umweltdaten über integrierte Sensoren ausgelesen und auf der LED-Matrix
     visualisiert werden. Ziel ist es, eine dynamische Wetteranzeige zu
-    programmieren, die Temperaturänderungen erkennt und bei starken Schwankungen
-    akustisch signalisiert.
+    programmieren, die Temperaturänderungen erkennt und starke Schwankungen
+    anzeigt.
   selfAssign: true
   defaultNumberOfRooms: '2'
 members:
@@ -27,13 +27,13 @@ modules:
 
         dieses Laborpraktikum bietet Ihnen die Möglichkeit, den Einstieg in die Programmierung eingebetteter Systeme mit MicroPython zu erlernen – direkt am Beispiel des Calliope mini.
 
-        Im Mittelpunkt steht nicht die Lösung eines vorgegebenen Problems, sondern die freie Auseinandersetzung mit den vielfältigen Sensoren und Aktoren des Calliope mini: Sie können Umweltdaten erfassen, die LED-Matrix ansteuern und eigene kleine Anwendungen zur Umweltüberwachung entwickeln.
+        Im Mittelpunkt steht eine Wetteranzeige: Sie erfassen Umweltdaten mit den Sensoren des Calliope mini, stellen sie auf der LED-Matrix dar und erkennen starke Temperaturänderungen. Darüber hinaus können Sie die Anwendung mit eigenen Ideen erweitern.
 
         Sie können Ihre Programme direkt aus dem Editor heraus auf das reale Gerät hochladen und testen. Bitte beachten Sie, ob bereits jemand an der Station arbeitet, bevor Sie Ihren Code hochladen. Der letzte Programmzustand bleibt erhalten, also verlassen Sie die Station bitte in einem nachvollziehbaren Zustand.
 
-        In **Raum 1** erhalten Sie grundlegende Informationen zum Calliope mini und zu den Lernzielen dieses Labors. In **Raum 2** bereiten Sie sich mit einer Simulatorübung auf die Arbeit am realen Gerät vor. Die praktische Umsetzung erfolgt in der **Station**, wo Sie den Calliope mini programmieren können.
+        In **Raum 1** erhalten Sie grundlegende Informationen zum Calliope mini und zu den Lernzielen dieses Labors. In **Raum 2** entwickeln und testen Sie Ihr Programm im Simulator, in dem Sie Temperatur und Helligkeit selbst einstellen können. Auf der **Station** führen Sie es anschließend auf dem realen Calliope mini aus.
 
-        Die Aufgabe ist bewusst offen gehalten – Sie sollen eigene Ideen ausprobieren, mit der Hardware experimentieren und ein Gefühl für die Programmierung eingebetteter Systeme entwickeln. Bei Fragen oder technischen Problemen stehen Ihnen unsere Betreuer selbstverständlich zur Seite.
+        Bei Fragen oder technischen Problemen steht Ihnen unser Betreuungsteam selbstverständlich zur Seite.
 
         > Ihre Codeänderungen werden auf der Station **anonymisiert** gespeichert. Wir wollen damit tatsächliche Problemfelder identifizieren, um damit die Veranstaltung systematisch weiterzuentwickeln. Aus den Daten können keine Rückschlüsse auf den Teilnehmenden oder spezifika des Rechners gezogen werden. Wenn Sie Fragen dazu haben, sprechen Sie uns gern an.
 
@@ -83,21 +83,28 @@ modules:
         ## Lernziele
 
         * Erste Schritte mit der Programmierung von eingebetteten Systemen in MicroPython
-        * Kennenlernen der Hardware-Funktionen des Calliope mini (Sensoren, LEDs, Taster)
-        * Eigenständiges Experimentieren mit Umweltsensoren und der LED-Matrix
+        * Kennenlernen der Hardware-Funktionen des Calliope mini (Sensoren, LED-Matrix, Taster)
+        * Auslesen von Umweltsensoren und Darstellung der Messwerte auf der LED-Matrix
         * Entwicklung strukturierter, wiederverwendbarer Programme in MicroPython
         * Nutzung der seriellen Schnittstelle zur Kommunikation und Fehleranalyse
 
         ## Aufgabenstellung
 
-        Diese Aufgabe ist offen gestaltet, das heißt: Es gibt keine feste Vorgabe, sondern Sie haben die Möglichkeit, eigenständig eine kleine Anwendung mit dem Calliope mini zu entwickeln. Mögliche Beispiele:
+        > **Hauptaufgabe**: Entwickeln Sie eine Wetteranzeige, die die Temperatur regelmäßig misst, sie über ein Symbol auf der LED-Matrix darstellt und starke Temperaturänderungen zwischen zwei Messungen erkennt und anzeigt.
 
-        * Schreiben Sie ein Programm, das kontinuierlich Umweltdaten (Licht, Temperatur) misst und auf der LED-Matrix anzeigt.
-        * Entwickeln Sie eine einfache Alarmfunktion, die auf Basis der Helligkeit die LED-Matrix steuert.
-        * Entwickeln Sie eine Musikbox, die basierend auf Lichtintensität verschiedene Melodien abspielt.
-        * Übertragen Sie Messwerte kontinuierlich über die serielle Schnittstelle.
+        Die einzelnen Schritte finden Sie in der Simulatorübung in **Raum 2**. Wenn Ihre Wetteranzeige funktioniert, können Sie sie erweitern, zum Beispiel:
 
-        Sie können jederzeit eigene Ideen umsetzen und die vielfältigen Funktionen des Calliope mini nutzen. Nutzen Sie diese Gelegenheit, um verschiedene Sensoren und Aktoren auszuprobieren – und dabei MicroPython praxisnah zu erlernen.
+        * Eine Alarmfunktion, die bei Dunkelheit ein Warnsymbol auf der LED-Matrix zeigt.
+        * Ein Umschalten zwischen Temperatur- und Helligkeitsanzeige über die Taster A und B.
+        * Eine kontinuierliche Übertragung der Messwerte über die serielle Schnittstelle, z. B. als Tabelle mit Zeitstempel.
+
+        Sie können auch eigene Ideen umsetzen und weitere Funktionen des Calliope mini ausprobieren.
+
+        ## Simulator und Station
+
+        Im Simulator (**Raum 2**) stellen Sie Temperatur und Helligkeit mit Schiebereglern ein und bedienen die Taster per Mausklick. So können Sie jeden Zweig Ihres Programms gezielt testen.
+
+        Auf der **Station** läuft Ihr Programm auf dem realen Calliope mini, den Sie über die Kamera sehen. Dort können Sie die Sensorwerte nicht verändern: Die Raumtemperatur ist nahezu konstant, die Beleuchtung der Station ist eingeschaltet, solange jemand im Raum ist, und die Taster lassen sich aus der Ferne nicht drücken. Entwickeln und testen Sie die Logik Ihres Programms deshalb im Simulator, und prüfen Sie auf der Station, ob es auf der realen Hardware läuft und plausible Messwerte liefert.
 
         ## Technische Basis
 
@@ -149,21 +156,19 @@ modules:
       content: |-
         # Simulatorübung
 
-        Bevor Sie auf der Station mit dem realen Calliope mini arbeiten, können Sie Ihre Programme hier in einem Simulator entwickeln und testen. Der Simulator bildet einen Calliope mini 3 nach: LED-Matrix, Taster, Pins und Lautsprecher funktionieren wie auf dem realen Gerät. Die Ausgaben von `print()` erscheinen im Terminal unter der Platine.
+        Hier entwickeln Sie die Wetteranzeige aus der Hauptaufgabe. Der Simulator bildet einen Calliope mini 3 nach: LED-Matrix, Taster und Pins funktionieren wie auf dem realen Gerät. Die Ausgaben von `print()` erscheinen im Terminal unter der Platine.
 
-        Die Umweltdaten stellen Sie mit den Schiebereglern unter der Platine ein: die Temperatur zwischen 0 und 40 °C und die Lichtstärke zwischen 0 und 255. Das nebenstehende Programm liest die Temperatur jede Sekunde aus und gibt sie über die serielle Schnittstelle aus. Starten Sie es mit dem Ausführen-Knopf im Editor und verändern Sie die Temperatur.
+        Die Umweltdaten stellen Sie mit den Schiebereglern unter der Platine ein: die Temperatur zwischen 0 und 40 °C und die Helligkeit zwischen 0 und 255. Die Taster A und B drücken Sie per Mausklick auf der Platine. Das nebenstehende Programm liest die Temperatur jede Sekunde aus und gibt sie über die serielle Schnittstelle aus. Starten Sie es mit dem Ausführen-Knopf im Editor und verändern Sie die Temperatur.
 
         > **Praktische Aufgabe 1**: Erweitern Sie das Programm zu einer Wetteranzeige: Zeigen Sie über 25 °C ein fröhliches Gesicht (`Image.HAPPY`), unter 15 °C ein trauriges (`Image.SAD`) und dazwischen ein schlafendes (`Image.ASLEEP`).
 
-        > **Praktische Aufgabe 2**: Ergänzen Sie ein akustisches Signal (`music.play`), wenn sich die Temperatur zwischen zwei Messungen um mehr als 2 °C ändert. Prüfen Sie Ihr Programm, indem Sie den Schieberegler schnell und langsam verschieben.
+        > **Praktische Aufgabe 2**: Erkennen Sie, wenn sich die Temperatur zwischen zwei Messungen um mehr als 2 °C ändert. Zeigen Sie in diesem Fall kurz einen Pfeil in Richtung der Änderung (`Image.ARROW_N` bzw. `Image.ARROW_S`) und geben Sie eine Warnung über die serielle Schnittstelle aus. Prüfen Sie Ihr Programm, indem Sie den Schieberegler schnell und langsam verschieben.
 
         > **Konzeptionelle Aufgabe 1**: Die Funktion `temperature()` liefert die Temperatur des Prozessors, nicht die der Umgebung. Überlegen Sie, wie sich das auf Ihre Messwerte auf dem realen Gerät auswirkt, und wie häufig eine Messung für eine Wetteranzeige sinnvoll ist.
 
         ## Vorbereitung auf das Remote-Labor
 
-        Der Lichtsensor lässt sich ebenfalls über einen Schieberegler einstellen und mit `display.read_light_level()` auslesen.
-
-        > **Tipp**: Entwickeln Sie Ihre Anwendung (z. B. die Alarmfunktion auf Basis der Helligkeit aus Raum 1) zuerst hier im Simulator. Kopieren Sie den Code anschließend in den Editor der Station und testen Sie ihn auf dem realen Calliope mini. Beachten Sie, dass sich die Sensorwerte am realen Gerät nicht per Schieberegler einstellen lassen.
+        Wenn Ihre Wetteranzeige im Simulator funktioniert, kopieren Sie den Code in den Editor der Station und führen Sie ihn auf dem realen Calliope mini aus. Dort lassen sich die Sensorwerte nicht verändern und die Taster nicht drücken. Testen Sie deshalb alle Zweige Ihres Programms hier im Simulator, auch die Erweiterungen aus Raum 1 (die Helligkeit lesen Sie mit `display.read_light_level()` aus).
     studentConfig:
       content: ''
     teacherConfig:
@@ -217,9 +222,8 @@ modules:
         from calliopemini import *
 
         while True:
-            display.show(Image.HEART)
+            print('Temperatur:', temperature(), 'Helligkeit:', display.read_light_level())
             sleep(1000)
-            display.scroll('Hello')
       runCommand: execute
       language: python
       theme: auto
@@ -272,30 +276,22 @@ modules:
 
         Ziel ist es, sich mit der Plattform vertraut zu machen, Sensorwerte auszulesen, diese auf der LED-Matrix anzuzeigen und einfache Logik zu implementieren.
 
-        ## Beispielcode für Umweltdatenanzeige mit MicroPython
+        ## Remote-Labor
+
+        > **Praktische Aufgabe 3**: Führen Sie zunächst den folgenden Ausgangscode aus. Er gibt Temperatur und Helligkeit des realen Calliope mini jede Sekunde über die serielle Schnittstelle aus. Vergleichen Sie die Werte mit denen, die Sie im Simulator eingestellt haben.
+
+        > **Praktische Aufgabe 4**: Führen Sie Ihre im Simulator entwickelte Wetteranzeige auf der Station aus. Prüfen Sie über die Kamera, ob das passende Symbol auf der LED-Matrix erscheint.
+
+        > **Konzeptionelle Aufgabe 2**: Warum ändern sich die Messwerte auf der Station kaum? Wie würden Sie Ihr Programm auf einem realen Gerät testen, dessen Umgebung Sie nicht beeinflussen können?
+
+        **Ausgangscode**
 
         ```python
         from calliopemini import *
-        import music
-
-        prev_temp = temperature()
 
         while True:
-            temp = temperature()
-            print('Temperature:', temp, 'deg')
-
-            if temp > 25:
-                display.show(Image.HAPPY)
-            elif temp < 15:
-                display.show(Image.SAD)
-            else:
-                display.show(Image.ASLEEP)
-
-            if abs(temp - prev_temp) > 2:
-                music.play(['c4:4'])
-
-            prev_temp = temp
-            sleep(2000)
+            print('Temperatur:', temperature(), 'Helligkeit:', display.read_light_level())
+            sleep(1000)
         ```
     studentConfig:
       content: ''
@@ -314,13 +310,13 @@ modules:
     stationConfig:
       survey: |-
         {
-          "title": "Student Feedback",
+          "title": "Feedback zum Labor",
           "pages": [
             {
               "name": "page1",
               "elements": [
-                { "type": "rating", "name": "experience", "title": "Rate your experience", "rateMax": 5 },
-                { "type": "comment", "name": "suggestions", "title": "Any suggestions?" }
+                { "type": "rating", "name": "experience", "title": "Wie bewerten Sie das Labor?", "rateMax": 5 },
+                { "type": "comment", "name": "suggestions", "title": "Haben Sie Verbesserungsvorschläge?" }
               ]
             }
           ]
