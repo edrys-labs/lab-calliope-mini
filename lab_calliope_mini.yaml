@@ -13,7 +13,7 @@ meta:
     programmieren, die Temperaturänderungen erkennt und bei starken Schwankungen
     akustisch signalisiert.
   selfAssign: true
-  defaultNumberOfRooms: '1'
+  defaultNumberOfRooms: '2'
 members:
   teacher: []
   student: []
@@ -46,8 +46,10 @@ modules:
 
 
         In **Raum 1** erhalten Sie grundlegende Informationen zum Calliope mini
-        und zu den Lernzielen dieses Labors. Die praktische Umsetzung erfolgt in
-        der **Station**, wo Sie den Calliope mini programmieren können.
+        und zu den Lernzielen dieses Labors. In **Raum 2** bereiten Sie sich mit
+        einer Simulatorübung auf die Arbeit am realen Gerät vor. Die praktische
+        Umsetzung erfolgt in der **Station**, wo Sie den Calliope mini
+        programmieren können.
 
 
         Die Aufgabe ist bewusst offen gehalten – Sie sollen eigene Ideen
@@ -224,6 +226,69 @@ modules:
     width: 700
     height: 700
     id: e5265453-d7bf-4804-9cdf-8d69c9b55e42
+  - url: https://edrys-labs.github.io/module-markdown-it/index.html
+    config:
+      content: |-
+        # Simulatorübung
+
+        Bevor Sie auf der Station mit dem realen Calliope mini arbeiten, können Sie Ihre Programme hier in einem Simulator entwickeln und testen. Der Simulator bildet einen Calliope mini 3 nach: LED-Matrix, Taster, Pins und Lautsprecher funktionieren wie auf dem realen Gerät. Die Ausgaben von `print()` erscheinen im Terminal unter der Platine.
+
+        Die Umweltdaten stellen Sie mit den Schiebereglern unter der Platine ein: die Temperatur zwischen 0 und 40 °C und die Lichtstärke zwischen 0 und 255. Das nebenstehende Programm liest die Temperatur jede Sekunde aus und gibt sie über die serielle Schnittstelle aus. Starten Sie es mit dem Ausführen-Knopf im Editor und verändern Sie die Temperatur.
+
+        > **Praktische Aufgabe 1**: Erweitern Sie das Programm zu einer Wetteranzeige: Zeigen Sie über 25 °C ein fröhliches Gesicht (`Image.HAPPY`), unter 15 °C ein trauriges (`Image.SAD`) und dazwischen ein schlafendes (`Image.ASLEEP`).
+
+        > **Praktische Aufgabe 2**: Ergänzen Sie ein akustisches Signal (`music.play`), wenn sich die Temperatur zwischen zwei Messungen um mehr als 2 °C ändert. Prüfen Sie Ihr Programm, indem Sie den Schieberegler schnell und langsam verschieben.
+
+        > **Konzeptionelle Aufgabe 1**: Die Funktion `temperature()` liefert die Temperatur des Prozessors, nicht die der Umgebung. Überlegen Sie, wie sich das auf Ihre Messwerte auf dem realen Gerät auswirkt, und wie häufig eine Messung für eine Wetteranzeige sinnvoll ist.
+
+        ## Vorbereitung auf das Remote-Labor
+
+        Der Lichtsensor lässt sich ebenfalls über einen Schieberegler einstellen und mit `display.read_light_level()` auslesen.
+
+        > **Tipp**: Entwickeln Sie Ihre Anwendung (z. B. die Alarmfunktion auf Basis der Helligkeit aus Raum 1) zuerst hier im Simulator. Kopieren Sie den Code anschließend in den Editor der Station und testen Sie ihn auf dem realen Calliope mini. Beachten Sie, dass sich die Sensorwerte am realen Gerät nicht per Schieberegler einstellen lassen.
+    studentConfig:
+      content: ''
+    teacherConfig:
+      content: ''
+    stationConfig:
+      content: ''
+    showInCustom: Room 2
+    width: half
+    height: medium
+    id: 1f2c79f0-e39a-4449-a6d8-6ea62ebc638a
+  - url: https://edrys-labs.github.io/module-monaco-editor/
+    config:
+      runCommand: execute
+      language: python
+      synchronize: false
+      showLanguageSelector: true
+      value: |
+        from calliopemini import *
+
+        while True:
+            temp = temperature()
+            print('Temperature:', temp, 'deg')
+            sleep(1000)
+    studentConfig: ''
+    teacherConfig: ''
+    stationConfig: ''
+    showInCustom: Room 2
+    width: full
+    height: huge
+    id: b4a899dd-f44b-4040-a52d-f04fb6f4cde3
+  - url: https://edrys-labs.github.io/module-micropython-simulator/index.html
+    config:
+      board: calliope-mini-3
+      execute: execute
+      sensors: temperature:0:40, lightLevel
+      synchronize: false
+    studentConfig: ''
+    teacherConfig: ''
+    stationConfig: ''
+    showInCustom: Room 2
+    width: half
+    height: huge
+    id: 79092ef5-beba-4018-97f0-f0b0ea1ae66b
   - url: https://edrys-labs.github.io/module-monaco-editor/
     config:
       editorId: ''
